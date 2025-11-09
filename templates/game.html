@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='game.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+        <div class="top">
+    <div class="logo"></div>
+    <h1 class="title">GAMEVERSE</h1>
+    <div class="logos">
+        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="/login"><i class="fa-solid fa-user"></i></a>
+    </div>
+</div>
+    <nav>
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/store" class="page">STORE</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <li><a href="/support">SUPPORT</a></li>
+            <li><a href="/news">NEWS</a></li>
+            <li><a href="/event">EVENTS</a></li>
+        </ul>
+    </nav>
+    <div class="m">
+        <div class="top1">
+            <iframe width="560" height="315" src="{{games.trailer}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <img src="{{url_for('static',filename=games.logo)}}" alt="">
+        </div>
+        <div class="top2">
+            <div class="desc">
+                <p>{{games.desc}}
+                </p>
+            </div>
+            <div class="btn">
+                <p>{{games.price}}</p>
+                <a href=""><button>Buy Now</button></a>
+                <button>Add to cart</button>
+            </div>
+        </div>
+
+        <div class="req">
+            <h1>System Requirements</h1>
+            <ul>
+                <li>Requires a 64-bit processor and operating system</li>
+                <li>OS: Windows 10/11 64-bit (version 1909 or higher)</li>
+                <li>Processor: Intel Core i3-8100, AMD Ryzen 3 1300X</li>
+                <li>Memory: 16 GB RAM</li>
+                <li>Graphics: NVIDIA GeForce GTX 1650, AMD Radeon RX 5500XT</li>
+                <li>Storage: 150 GB available space</li>
+                <li>Additional Notes: SSD Required</li>
+            </ul>
+        </div>
+        <div class="ss">
+            <h1>Screenshots</h1>
+            <img src="../static/Assets/tlou_ss1.png" alt="">
+            <img src="../static/Assets/tlou_ss2.png" alt="">
+        </div>
+
+        <div class="reviews">
+            <div class="cont">
+                <h1>Reviews</h1>
+            </div>
+            <div class="rs">
+                <div class="r1">
+                    <h2>Naresh Kumar</h2>
+                    <span></span>
+                    <p class="rd">“An emotional masterpiece. The graphics, gameplay, and storytelling are top-tier. Every moment feels real and heartbreaking — one of the most powerful games I’ve ever played.”</p>
+                </div>
+                <div class="r1">
+                    <h2>Kiruthick Raj</h2>
+                    <span></span>
+                    <p class="rd">“Beautifully made and emotionally intense, but exhausting to play. The story is bold, though the pacing drags at times. I loved it, but it’s not an easy experience.”</p>
+                </div>
+                <div class="r1">
+                    <h2>Praveen</h2>
+                    <span></span>
+                    <p class="rd">“Technically impressive, but the story lost me. Too much violence and forced perspective shifts made it hard to stay connected. Great visuals, disappointing narrative.”</p>
+                </div>
+            </div>
+        </div>
+
+        <form action="">
+            <h1>Write your Reviews</h1>
+            <input type="text" placeholder="Enter your name"><br>
+            <textarea name="" id="" placeholder="Write your review"></textarea><br>
+            <input type="submit" class="btnn">
+        </form>
+        
+    </div>    
+</body>
+</html>

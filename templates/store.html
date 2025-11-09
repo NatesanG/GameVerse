@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='store.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="top">
+        <div class="logo"></div>
+    <h1 class="title">GAMEVERSE</h1>
+    <div class="logos">
+        <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="/login"><i class="fa-solid fa-user"></i></a>
+    </div>
+</div>
+    <nav>
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/store" class="page">STORE</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <li><a href="/support">SUPPORT</a></li>
+            <li><a href="/news">NEWS</a></li>
+            <li><a href="/event">EVENTS</a></li>
+        </ul>
+    </nav>
+    <form action="/store" method="get">
+    <input type="search" name="q" value="{{request.args.get('q','')}}" placeholder="Search for games..." class="search">
+</form>
+
+    <div class="store">
+        <div class="top-s">
+        <h1>POPULAR GENRES</h1>
+        <div class="prev">&lt</div>
+        <div class="next">&gt</div>
+    </div>
+        <div class="genres"> 
+            <div class="g1">
+                <img src="../static/Assets/action.png" alt="">
+                <div class="overlay">
+                    <h2>Action</h2>
+                </div>
+            </div> 
+            <div class="g1">
+                <img src="../static/Assets/adv.png" alt="">
+                <div class="overlay">
+                    <h2>Adventure</h2>
+                </div>
+            </div> 
+            <div class="g1">
+                <img src="../static/Assets/racing.png" alt="">
+                <div class="overlay">
+                    <h2>Racing</h2>
+                </div>
+            </div> 
+            <div class="g1">
+                <img src="../static/Assets/shooting.png" alt="">
+                <div class="overlay">
+                    <h2>Shooting</h2>
+                </div>
+            </div> 
+        </div>
+        <h1>New Releases</h1>
+        <div class="games1">
+            {% for game in new_games%}
+                <a href="{{ url_for('game_details', id=game['_id']) }}"><div class="gam1">
+                    <img src="{{url_for('static',filename=game.image)}}" alt="">
+                    <h3>{{game.name}}</h3>
+                    <p>{{game.price}}<p>
+                        <div class="rating">
+                            <div class="star">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <p>{{game.rating}}</p>
+                        </div>        
+                    
+                    <div class="btn">
+                        <a href=""><button>Buy Now</button></a>
+                        <form action="{{ url_for('add_to_cart') }}" method="post" style="display:inline;">
+                            <input type="hidden" name="game_id" value="{{ game['_id'] }}">
+                            <button>Add to cart</button>
+                        </form>    
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>   
+
+            <h1>Most Popular</h1>
+                <div class="games">
+                    {% for game in popular_games%}
+                            <div class="gam1">
+                                <img src="{{url_for('static',filename=game.image)}}" alt="">
+                                    <h3>{{game.name}}</h3>
+                                    <p>{{game.price}}<p>
+                                        <div class="rating">
+                                            <div class="star">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                            </div>
+                                            <p>{{game.rating}}</p>
+                                        </div>        
+                                    
+                                    <div class="btn">
+                                        <a href=""><button>Buy Now</button></a>
+                                        <button>Add to cart</button>
+                                    </div>   
+                            </div>
+                    {% endfor %}
+                </div>   
+                <footer>
+                    <p>© 2025 GameVerse. All rights reserved.</p>
+                </footer>
+    </body>
+
+    <!-- <script src="../Javascript/store.js"></script> -->
+</html>

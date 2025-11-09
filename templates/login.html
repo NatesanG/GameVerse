@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='login.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="top">
+        <div class="logo">
+        </div>
+    <h1 class="title">GAMEVERSE</h1>
+    <div class="logos">
+        <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="/login" class="page"><i class="fa-solid fa-user"></i></a>
+    </div>
+</div>
+    <nav>
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/store">STORE</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <li><a href="/support">SUPPORT</a></li>
+            <li><a href="/news">NEWS</a></li>
+            <li><a href="/event">EVENTS</a></li>
+        </ul>
+    </nav>
+
+    <div class="cont">
+        <h1>Login</h1>
+        <form action="/store" method="post">
+            <label for="">Enter your email</label>
+            <input type="email" id="email" name="email" required>
+            <p class="ep"></p>
+            <label for="">Enter your password</label>
+            <input type="password" id="pass" name="password" required>
+            <p class="cp"><p>
+
+            <input type="submit" class="sub">
+        </form>
+        <a href="/account"><button>Create Account</button></a>
+    </div>
+
+</body>
+</html>

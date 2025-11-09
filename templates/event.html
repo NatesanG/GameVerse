@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='event.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="top">
+        <div class="logo"></div>
+    <h1 class="title">GAMEVERSE</h1>
+    <div class="logos">
+        <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="/login"><i class="fa-solid fa-user"></i></a>
+    </div>
+</div>
+    <nav>
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/store">STORE</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <li><a href="/support">SUPPORT</a></li>
+            <li><a href="/news">NEWS</a></li>
+            <li><a href="/event" class="page">EVENTS</a></li>
+        </ul>
+    </nav>
+
+    <div class="ev">
+        <h1>Events</h1>
+        {% for ev in ong_ev %}
+        <div class="on">
+            <img src="{{url_for('static',filename=ev.image)}}" alt="">
+            <div class="evc">
+                <h3>{{ev.event}}</h3>
+                <span>{{ev.start_date}} to {{ev.end_date}}</span>
+                <button>Register for the event</button>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="cev">
+            <h1>Completed Events</h1>
+            <div class="cevs">
+                {% for cev in comp_ev %}
+                <div class="cev1">
+                    <img src="{{url_for('static',filename=cev.image)}}" alt="">
+                    <div class="cevc">
+                    <h3>{{cev.event}}</h3>
+                    <button>View Leaderboards</button>
+                </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

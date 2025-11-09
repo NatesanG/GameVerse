@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='news.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="top">
+        <div class="logo"></div>
+    <h1 class="title">GAMEVERSE</h1>
+    <div class="logos">
+        <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="/login"><i class="fa-solid fa-user"></i></a>
+    </div>
+</div>
+    <nav>
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/store">STORE</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <li><a href="/support">SUPPORT</a></li>
+            <li><a href="/news" class="page">NEWS</a></li>
+            <li><a href="/event">EVENTS</a></li>
+        </ul>
+    </nav>
+
+    <div class="n">
+        <h1>News</h1>
+        <h2>Recent Gaming News</h2>
+        <div class="news">
+            {% for n in new%}
+            <div class="n1">
+                <iframe width="450" height="250" src={{n.link}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h3>{{n.head}}</h3>
+                <p>{{n.desc}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <footer>
+        <p>© 2025 GameVerse. All rights reserved.</p>
+    </footer>
+</body>
+</html>
