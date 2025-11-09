@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Bebas+Neue&display=swap');
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Orbitron', sans-serif;
+}
+.cont{
+    width: 500px;
+    height: 450px;
+    border: 1px solid cyan;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding: 20px;
+}
+.cont h1{
+    color: cyan;
+    text-align: center;
+    letter-spacing: 3px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+form{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    padding: 20px;
+    gap: 2px;
+    position: relative;
+    top: -20px;
+}
+input{
+    width: 300px;
+    height: 30px;
+    background-color: transparent;
+    color: cyan;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid grey;
+    font-size: 16px;
+}
+input:focus{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid grey;
+}
+.p,.cp,.emp{
+    color: darkred;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+.submit{
+    width: 120px;
+    height: 40px;
+    border: 2px solid cyan;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s all ease;
+}
+.submit:active,
+.submit:focus{
+    border: 2px solid cyan;
+    border-radius: 5px;
+}
+.submit:hover{
+    background-color: cyan;
+    color: black;
+}

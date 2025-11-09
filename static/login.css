@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px black inset !important; /* black background */
+    -webkit-text-fill-color: cyan !important; /* text color */
+    transition: background-color 5000s ease-in-out 0s; /* removes yellow flash */
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: cyan;
+    border-radius: 10px;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: black;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body::selection {
+    background-color: cyan;
+    color: black;
+}
+
+nav {
+    width: 200px;
+    height: 80vh;
+    position: relative;
+    top: 35px;
+    animation: slide-in 1.4s ease-in-out forwards;
+}
+
+nav ul {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+li {
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: white;
+    transition: .3s all ease;
+}
+
+a:hover {
+    color: cyan;
+}
+
+.top {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 100px;
+    border-radius: 50%;
+    position: relative;
+    top: 30px;
+    left: 30px;
+    background-image: url(../static/logo.jpg);
+    background-size: cover;
+    background-position: center;
+    animation: slide-down 1.4s ease-in-out forwards;
+}
+
+.page {
+    color: cyan;
+    border: 2px dashed cyan;
+    padding: 5px;
+}
+.title {
+    color: cyan;
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 28px;
+    color: white;
+    position: relative;
+    left: 500px;
+}
+
+.fa-cart-shopping,
+.fa-user {
+    transition: .3s all ease;
+    cursor: pointer;
+}
+
+.fa-cart-shopping:hover,
+.fa-user:hover {
+    color: cyan;
+}
+
+@keyframes slide-in {
+    0% {
+        left: -300px;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        top: -100px;
+    }
+    100% {
+        top: 30px;
+    }
+}
+.cont{
+    width: 500px;
+    height: 400px;
+    border: 2px solid cyan;
+    border-radius: 20px;
+    position: relative;
+    left: 470px;
+    top: -400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.cont h1{
+    color: cyan;
+    letter-spacing: 5px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+}
+label{
+    color: white;
+    letter-spacing: 2px;
+}
+input{
+    width: 300px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid gray;
+    color: cyan;
+    padding: 5px;
+    font-size: 15px;
+}
+input:focus{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid gray;
+}
+.sub{
+    width: 100px;
+    height: 30px;
+    border: 1px solid cyan;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: .3s all ease;
+    cursor: pointer;
+}
+.sub:hover{
+    background-color: cyan;
+    color: black;
+}
+.sub:active,
+.sub:focus{
+    border: 1px solid cyan;
+    border-radius: 5px;
+}
+button{
+    width: 120px;
+    height: 30px;
+    border: 1px solid cyan;
+    border-radius: 5px;
+    background-color: transparent;
+    color: cyan;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s all ease;
+}
+button:hover{
+    background-color: cyan;
+    color: black;
+}
+button{
+    position: relative;
+    right: 95px;
+}
+.ep,.cp{
+    color: darkred;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
